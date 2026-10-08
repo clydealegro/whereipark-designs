@@ -367,20 +367,27 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: var(--color-heading);
   cursor: pointer;
 }
+/* Plus/minus drawn with two gradient bars so they stay centered and crisp;
+   the vertical bar collapses when the item opens. */
 .faq_question::before {
-  content: "+";
+  content: "";
   flex: none;
   width: 1.5rem;
   height: 1.5rem;
-  border: 1.5px solid #a4a7ae;
+  border: 2px solid currentColor;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 1rem;
-  line-height: 1;
   color: #a4a7ae;
+  background:
+    linear-gradient(currentColor, currentColor) center / 0.625rem 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 0.625rem no-repeat;
+  transition: color 0.2s ease, background-size 0.25s ease, transform 0.25s ease;
 }
-.faq_item.is-open .faq_question::before { content: "\2212"; }
+.faq_question:hover::before { color: var(--color-brand); }
+.faq_item.is-open .faq_question::before {
+  color: var(--color-brand);
+  background-size: 0.625rem 2px, 2px 0;
+  transform: rotate(180deg);
+}
 .faq_answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.25s ease; }
 .faq_answer > p { overflow: hidden; padding-left: 2.5rem; color: var(--color-body); line-height: 1.5rem; }
 .faq_item.is-open .faq_answer { grid-template-rows: 1fr; }
