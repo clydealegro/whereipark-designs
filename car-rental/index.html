@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monthly Parking for Turo Hosts &amp; Car Fleets | WhereiPark</title>
+  <meta name="description" content="Ran out of parking for your Turo fleet? WhereiPark connects hosts and rental agencies to secure monthly parking, fast. Get matched today.">
+  <!-- Prototype for review only. Live page: /group-parking-segment/car-rental-agency -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- Announcement bar -->
+  <div class="announce_component" data-announce>
+    <p class="announce_text">&#x1F697; Booking monthly parking? <strong>Get 10% off now or save 50% later.</strong> <a href="#form" class="announce_link">Learn more</a></p>
+    <button class="announce_close" type="button" aria-label="Dismiss announcement" data-announce-close>&times;</button>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar_component" data-nav>
+    <div class="navbar_container">
+      <a href="#" class="navbar_logo-link" aria-label="WhereiPark home">
+        <img src="images/whereipark-logo.svg" alt="WhereiPark" class="navbar_logo" width="193" height="60">
+      </a>
+      <button class="navbar_menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="navbar_menu" id="nav-menu" data-nav-menu>
+        <a href="#" class="navbar_link is-dropdown">About Us</a>
+        <a href="#" class="navbar_link">Group Parking</a>
+        <a href="#" class="navbar_link is-dropdown">Cities</a>
+        <a href="#" class="navbar_link">Be A Partner</a>
+        <a href="#faq" class="navbar_link">FAQ</a>
+        <a href="#form" class="navbar_link">Contact Us</a>
+        <a href="#" class="button is-small">Sell Parking</a>
+        <a href="#" class="button is-small is-light">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-4.4 0-9 2.2-9 5.5V22h18v-2.5c0-3.3-4.6-5.5-9-5.5Z"/></svg>
+          Sign In
+        </a>
+        <a href="#" class="button is-small is-light">
+          <svg width="16" height="14" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="2" width="22" height="16" rx="2"/><path d="M6 13l2.5-6L11 13M7 11h3M14 7h5M16.5 7v6"/></svg>
+          Fran&ccedil;ais
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-wrapper">
+
+    <!-- Fold 1: Hero -->
+    <section class="section_hero">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="hero_layout">
+            <div class="hero_content">
+              <ol class="breadcrumb_list">
+                <li><a href="#">Home</a></li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page">Car Rental &amp; Fleets</li>
+              </ol>
+              <h1 class="heading-style-h1">Out of Space for Your Turo or Rental Car Fleet?</h1>
+              <p class="text-size-medium">WhereiPark helps Turo hosts, Getaround hosts, and rental car agencies find secure monthly parking near their pickup location, from 5 cars to 500.</p>
+              <a href="#form" class="button">Find me parking</a>
+            </div>
+            <div class="hero_image-wrapper">
+              <img src="images/hero-fleet.png" alt="Rental cars parked in a lot" class="hero_image" width="638" height="386">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fold 2: Logos -->
+    <section class="section_logos">
+      <div class="padding-global">
+        <div class="container-large">
+          <h2 class="logos_heading">Trusted by the biggest names for parking solutions</h2>
+          <picture>
+            <source media="(max-width: 767px)" srcset="images/client-logos-mobile.png" width="282" height="206">
+            <img src="images/client-logos.png" alt="Facebook, Marriott, Zipcar, Hilton, Coca-Cola, Microsoft, Mercedes-Benz, Rogers" class="logos_image" width="1216" height="38" loading="lazy">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fold 3: Built for -->
+    <section class="section_built-for">
+      <div class="padding-global padding-section-medium">
+        <div class="container-large">
+          <h2 class="heading-style-h2 text-align-center">Built for Anyone Growing A Vehicle Fleet</h2>
+          <div class="built-for_grid">
+            <div class="feature-card is-horizontal">
+              <svg class="feature-card_icon" width="88" height="88" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="translate(4 34)" stroke="#535862"><path d="M2 16 V11 L7 4 Q8.5 2 11 2 H33 Q35.5 2 37 4 L42 11 V16 Z"/><path d="M9 4 L12 10 H32 L35 4"/><circle cx="10" cy="16" r="3.5" fill="#fff"/><circle cx="34" cy="16" r="3.5" fill="#fff"/></g><g stroke="#00a7ca"><circle cx="46" cy="14" r="6"/><path d="M41.5 18.5 L33 27 M36 24 L39 27"/></g></svg>
+              <div>
+                <h3 class="feature-card_title">Turo &amp; Getaround Hosts</h3>
+                <p class="feature-card_text">You've scaled past what your driveway or apartment lot can hold. We find overflow parking near your pickup zone so guests can still find you easily.</p>
+              </div>
+            </div>
+            <div class="feature-card is-horizontal">
+              <svg class="feature-card_icon" width="88" height="88" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#535862"><path d="M12 24 V54 H52 V24"/><path d="M6 54 H58"/><rect x="26" y="36" width="12" height="18"/><path d="M16 32 H22 M42 32 H48"/></g><g stroke="#00a7ca"><path d="M8 24 H56 L52 12 H12 Z"/><path d="M20 12 L18 24 M32 12 V24 M44 12 L46 24"/></g></svg>
+              <div>
+                <h3 class="feature-card_title">Independent Rental Agencies</h3>
+                <p class="feature-card_text">Manage a fleet without owning or leasing a dedicated lot. Scale up for busy season, scale down in the off-season.</p>
+              </div>
+            </div>
+            <div class="feature-card is-horizontal">
+              <svg class="feature-card_icon" width="88" height="88" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="translate(10 38)" stroke="#535862"><path d="M2 16 V11 L7 4 Q8.5 2 11 2 H33 Q35.5 2 37 4 L42 11 V16 Z"/><path d="M9 4 L12 10 H32 L35 4"/><circle cx="10" cy="16" r="3.5" fill="#fff"/><circle cx="34" cy="16" r="3.5" fill="#fff"/></g><g stroke="#00a7ca"><path d="M22 8 H42 L52 18 L42 28 H22 Z"/><circle cx="41" cy="18" r="2.5"/></g></svg>
+              <div>
+                <h3 class="feature-card_title">Dealerships with Overflow Inventory</h3>
+                <p class="feature-card_text">Secure nearby parking for excess inventory without expanding your footprint.</p>
+              </div>
+            </div>
+            <div class="feature-card is-horizontal">
+              <svg class="feature-card_icon" width="88" height="88" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#535862"><path d="M4 46 V18 H38 V46 Z"/><path d="M38 28 H50 L58 36 V46 H38"/><path d="M4 46 H58"/><circle cx="16" cy="47" r="4" fill="#fff"/><circle cx="48" cy="47" r="4" fill="#fff"/></g><g stroke="#00a7ca"><path d="M11 27 H28 M11 34 H23"/></g></svg>
+              <div>
+                <h3 class="feature-card_title">Corporate &amp; Delivery Fleets</h3>
+                <p class="feature-card_text">Flexible monthly parking for company vehicles near your depot or office.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fold 4: Problem -->
+    <section class="section_problem">
+      <div class="padding-global padding-section-large">
+        <div class="container-large">
+          <div class="split_layout">
+            <div class="split_content">
+              <h2 class="heading-style-h2">The Parking Problem Every Growing Fleet Hits</h2>
+              <p class="text-size-medium">Buying cars for your Turo or rental business is the easy part. Finding somewhere secure and legal to park all of them, without paying for a warehouse or a second job as your own valet, is the hard part.</p>
+              <p class="text-size-medium">WhereiPark solves this by connecting you to a nationwide network of monthly parking spaces (indoor lots, garages, covered spaces, driveways) near wherever your guests are picking up. No long-term lease. No minimum fleet size. Add or drop spaces monthly as your fleet grows or shrinks.</p>
+            </div>
+            <img src="images/fleet-problem.jpg" alt="Fleet vehicles parked in a city lot" class="split_image" width="577" height="440" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fold 5: Benefits -->
+    <section class="section_benefits">
+      <div class="padding-global padding-section-medium">
+        <div class="container-large">
+          <div class="section-header">
+            <span class="pill">Benefits</span>
+            <h2 class="heading-style-h2">Solve Your Fleet Parking Challenges with WhereiPark</h2>
+          </div>
+          <div class="benefits_grid">
+            <div class="feature-card is-centered">
+              <svg class="feature-card_icon" width="64" height="64" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="#535862" d="M32 6 L52 14 V30 C52 44 43 53 32 58 C21 53 12 44 12 30 V14 Z"/><path stroke="#00a7ca" d="M23 31 L29 37 L41 25"/></svg>
+              <h3 class="feature-card_title">Secure, Protected Vehicles</h3>
+              <p class="feature-card_text">Spaces with gates, cameras, and lighting protect the capital you've invested in your fleet, so your cars stay safe when they're not on the road.</p>
+            </div>
+            <div class="feature-card is-centered">
+              <img src="images/icon-cost.png" alt="" class="feature-card_icon" width="64" height="64">
+              <h3 class="feature-card_title">Cost Savings</h3>
+              <p class="feature-card_text">Monthly group rates beat daily lot fees, commercial leases, or a dedicated storage facility as your fleet scales.</p>
+            </div>
+            <div class="feature-card is-centered">
+              <img src="images/icon-flex.png" alt="" class="feature-card_icon" width="64" height="64">
+              <h3 class="feature-card_title">Flexible Capacity for a Growing Fleet</h3>
+              <p class="feature-card_text">Group parking scales with your fleet. Add spaces when you're expanding, reduce them in slower months, and never pay for spots you don't need.</p>
+            </div>
+            <div class="feature-card is-centered">
+              <img src="images/icon-experience.png" alt="" class="feature-card_icon" width="64" height="64">
+              <h3 class="feature-card_title">Better Guest &amp; Host Experience</h3>
+              <p class="feature-card_text">Clean, accessible parking is often a guest's first and last impression of your rental, and getting it right protects your host rating.</p>
+            </div>
+          </div>
+          <div class="button-group is-center"><a href="#form" class="button">Find me parking</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fold 6: How it works -->
+    <section class="section_steps">
+      <div class="padding-global padding-section-medium">
+        <div class="container-large">
+          <h2 class="heading-style-h2 text-align-center">How it Works</h2>
+          <div class="steps_grid">
+            <div class="step-card">
+              <img src="images/step-1.png" alt="" class="step-card_image" width="203" height="203" loading="lazy">
+              <h3 class="step-card_title">Tell Us Your Needs</h3>
+              <p class="step-card_text">Number of vehicles, location, and any must-haves (covered, gated, EV charging).</p>
+            </div>
+            <div class="step-card">
+              <img src="images/step-2.png" alt="" class="step-card_image" width="202" height="203" loading="lazy">
+              <h3 class="step-card_title">Reserve What You Need</h3>
+              <p class="step-card_text">Compare matched options and book the right mix of spaces and start dates.</p>
+            </div>
+            <div class="step-card">
+              <img src="images/step-3.png" alt="" class="step-card_image" width="204" height="203" loading="lazy">
+              <h3 class="step-card_title">Get Your Team Parked</h3>
+              <p class="step-card_text">Share confirmed locations with guests, co-hosts, or drivers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fold 7: Why trust -->
+    <section class="section_trust">
+      <div class="padding-global padding-section-large">
+        <div class="container-large">
+          <div class="split_layout">
+            <div class="split_content">
+              <h2 class="heading-style-h2">Why Hosts and Rental Agencies Trust WhereiPark</h2>
+              <p class="text-size-medium">WhereiPark is North America's largest parking sharing marketplace, connecting Turo hosts, Getaround hosts, and rental car agencies with affordable, flexible parking near their pickup locations. We also find you off-market and private inventory spaces at the best, most affordable prices. Whether you need 5 spots or 500, WhereiPark has got your fleet covered.</p>
+              <ul class="trust_list">
+                <li class="trust_item">
+                  <img src="images/icon-source.png" alt="" width="64" height="64" loading="lazy">
+                  <div><h3 class="trust_title">Source the spots</h3><p>5 to 500+ spots, on-market and off, in metros like Toronto, San Francisco, Chicago, and LA.</p></div>
+                </li>
+                <li class="trust_item">
+                  <img src="images/icon-negotiate.png" alt="" width="64" height="64" loading="lazy">
+                  <div><h3 class="trust_title">Negotiate the terms</h3><p>We handle pricing, duration, and terms with lot owners, so you get a fair rate.</p></div>
+                </li>
+                <li class="trust_item">
+                  <img src="images/icon-support.png" alt="" width="64" height="64" loading="lazy">
+                  <div><h3 class="trust_title">Manage it for you</h3><p>A dedicated specialist handles changes, renewals, and anything that comes up as your fleet grows.</p></div>
+                </li>
+              </ul>
+            </div>
+            <img src="images/north-america-map.png" alt="Map of WhereiPark cities across North America" class="trust_map" width="504" height="458" loading="lazy">
+          </div>
+          <ul class="check-list">
+            <li>Parking footprint across 3,000+ cities in North America</li>
+            <li>Short and long term bookings</li>
+            <li>Discounted rates</li>
+            <li>Dedicated support</li>
+          </ul>
+          <div class="button-group is-center"><a href="#form" class="button">Find me parking</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fold 8: Parking options -->
+    <section class="section_options">
+      <div class="padding-global padding-section-medium">
+        <div class="container-large">
+          <div class="section-header">
+            <h2 class="heading-style-h2">Parking Options for Every Kind of Fleet</h2>
+            <p class="text-size-medium options_intro">WhereiPark offers a wide range of parking types to fit however your fleet is built: sedans, SUVs, EVs, or oversized vehicles. Mix and match space types, and add or subtract spots on a monthly basis as your fleet grows or shrinks. Full flexibility to match your business, not the other way around.</p>
+          </div>
+          <ul class="options_grid">
+            <li class="option-tile"><svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#535862"><path d="M8 56 V22 L32 8 L56 22 V56"/><path d="M4 56 H60"/></g><path stroke="#00a7ca" d="M26 48 V28 H34 A6 6 0 0 1 34 40 H26"/></svg><span>Indoor Lot</span></li>
+            <li class="option-tile"><svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="#00a7ca" d="M6 24 L32 10 L58 24"/><path stroke="#535862" d="M10 22 V54 M54 22 V54 M4 54 H60"/><g transform="translate(10 34)" stroke="#535862"><path d="M2 16 V11 L7 4 Q8.5 2 11 2 H33 Q35.5 2 37 4 L42 11 V16 Z"/><path d="M9 4 L12 10 H32 L35 4"/><circle cx="10" cy="16" r="3.5" fill="#fff"/><circle cx="34" cy="16" r="3.5" fill="#fff"/></g></svg><span>Covered</span></li>
+            <li class="option-tile"><svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="#535862" d="M6 56 V24 L32 8 L58 24 V56 M2 56 H62"/><path stroke="#00a7ca" d="M16 56 V32 H48 V56 M16 40 H48 M16 48 H48"/></svg><span>Garage</span></li>
+            <li class="option-tile"><svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="#535862" d="M14 56 V22 M4 56 H60"/><rect stroke="#00a7ca" x="4" y="6" width="20" height="16" rx="2"/><path stroke="#00a7ca" d="M11 18 V10 H16 A3 3 0 0 1 16 16 H11"/><g transform="translate(18 36)" stroke="#535862"><path d="M2 16 V11 L7 4 Q8.5 2 11 2 H33 Q35.5 2 37 4 L42 11 V16 Z"/><path d="M9 4 L12 10 H32 L35 4"/><circle cx="10" cy="16" r="3.5" fill="#fff"/><circle cx="34" cy="16" r="3.5" fill="#fff"/></g></svg><span>Street Parking</span></li>
+            <li class="option-tile"><svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="#535862" d="M12 30 L32 12 L52 30 V44 H12 Z M27 44 V34 H37 V44"/><path stroke="#00a7ca" d="M24 44 L16 60 M40 44 L48 60 M32 50 V54"/></svg><span>Driveway</span></li>
+            <li class="option-tile"><svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#00a7ca"><circle cx="46" cy="16" r="6"/><path d="M46 4 V6 M46 26 V28 M34 16 H36 M56 16 H58 M37.5 7.5 L39 9 M53 23 L54.5 24.5 M37.5 24.5 L39 23 M53 9 L54.5 7.5"/></g><path stroke="#535862" d="M4 56 H60"/><g transform="translate(8 38)" stroke="#535862"><path d="M2 16 V11 L7 4 Q8.5 2 11 2 H33 Q35.5 2 37 4 L42 11 V16 Z"/><path d="M9 4 L12 10 H32 L35 4"/><circle cx="10" cy="16" r="3.5" fill="#fff"/><circle cx="34" cy="16" r="3.5" fill="#fff"/></g></svg><span>Outdoor</span></li>
+            <li class="option-tile"><svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#535862"><rect x="10" y="10" width="24" height="46" rx="3"/><path d="M6 56 H40 M16 18 H28"/><path d="M34 26 H42 Q48 26 48 32 V46 Q48 50 52 50 H56"/></g><path stroke="#00a7ca" d="M25 24 L18 36 H26 L21 48"/></svg><span>EV Parking</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fold 9: FAQ -->
+    <section class="section_faq" id="faq">
+      <div class="padding-global padding-section-medium">
+        <div class="container-medium">
+          <h2 class="heading-style-h2 text-align-center">Frequently Asked Questions</h2>
+          <div class="faq_list" data-faq>
+            <div class="faq_item is-open">
+              <button class="faq_question" type="button" aria-expanded="true">Where can Turo hosts park their fleet?</button>
+              <div class="faq_answer"><p>Turo hosts can park their fleet in monthly parking spaces sourced through WhereiPark, including indoor lots, garages, and covered spaces near their usual pickup area. WhereiPark matches you with available spaces from its nationwide network rather than requiring you to find and lease a location yourself.</p></div>
+            </div>
+            <div class="faq_item">
+              <button class="faq_question" type="button" aria-expanded="false">How much does monthly parking cost for a rental car fleet?</button>
+              <div class="faq_answer"><p>Pricing varies by city, space type, and fleet size, but WhereiPark spaces are generally priced below traditional commercial leases since you're renting only the parking capacity you need. Request a quote for your specific location and fleet size to get exact pricing.</p></div>
+            </div>
+            <div class="faq_item">
+              <button class="faq_question" type="button" aria-expanded="false">How is WhereiPark different from a standard parking garage?</button>
+              <div class="faq_answer"><p>WhereiPark sources parking from a network of private and commercial lots near your pickup location rather than operating a single garage. This means more location options, more competitive pricing, and the flexibility to scale up or down each month without being locked into a long-term lease.</p></div>
+            </div>
+            <div class="faq_item">
+              <button class="faq_question" type="button" aria-expanded="false">Can I park 10, 20, or 100+ cars in one location?</button>
+              <div class="faq_answer"><p>Yes. WhereiPark works with hosts and agencies ranging from a handful of vehicles to fleets of 100+, and can source multiple locations near each other if a single lot doesn't have enough capacity.</p></div>
+            </div>
+            <div class="faq_item">
+              <button class="faq_question" type="button" aria-expanded="false">How quickly can I get parking through WhereiPark?</button>
+              <div class="faq_answer"><p>Our clients receive a curated list of nearby parking options within 1&ndash;2 business days of submitting their requirements. There's no lengthy procurement process, just a quick intake, and a WhereiPark specialist handles the sourcing.</p></div>
+            </div>
+            <div class="faq_item">
+              <button class="faq_question" type="button" aria-expanded="false">Can we add or remove parking spaces as our needs change?</button>
+              <div class="faq_answer"><p>Yes. WhereiPark is fully flexible on a month-to-month basis. Add capacity for peak travel seasons and holiday weekends, then reduce spaces during quieter months.</p></div>
+            </div>
+            <div class="faq_item">
+              <button class="faq_question" type="button" aria-expanded="false">Do I need a long-term lease?</button>
+              <div class="faq_answer"><p>No. WhereiPark parking is booked on a flexible monthly basis, so you can add or remove spaces as your fleet grows or shrinks without being locked into a multi-year commercial lease.</p></div>
+            </div>
+            <div class="faq_item">
+              <button class="faq_question" type="button" aria-expanded="false">Is this only for Turo, or does it work for traditional rental car agencies too?</button>
+              <div class="faq_answer"><p>Both. WhereiPark serves Turo and Getaround hosts, independent rental car agencies, and dealerships with overflow inventory: anyone who needs secure, flexible parking for a vehicle fleet.</p></div>
+            </div>
+            <div class="faq_item">
+              <button class="faq_question" type="button" aria-expanded="false">What cities does WhereiPark serve for parking?</button>
+              <div class="faq_answer"><p>WhereiPark currently serves 16 major cities across the US and Canada, including Toronto, Vancouver, New York, Chicago, San Francisco, Seattle, Washington DC, Boston, Los Angeles, Philadelphia, Miami, and more. If your pickup location is in or near a major metro area, chances are WhereiPark has options nearby.</p></div>
+            </div>
+            <div class="faq_item">
+              <button class="faq_question" type="button" aria-expanded="false">What information do I need to get started?</button>
+              <div class="faq_answer"><p>Just the basics: your pickup location, an estimate of how many spaces you need, your preferred start date, and the types of vehicles in your fleet. A WhereiPark specialist will take it from there.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fold 10: Form -->
+    <section class="section_form" id="form">
+      <div class="padding-global padding-section-medium">
+        <div class="container-large">
+          <h2 class="heading-style-h2 text-align-center">Tell Us Your Parking Needs. We'll Handle the Rest.</h2>
+          <div class="form_card">
+            <div class="hs-form-frame" data-region="na1" data-form-id="d1161483-ed24-47be-a73b-1793d0726229" data-portal-id="22317901"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer_component">
+    <div class="padding-global">
+      <div class="container-large">
+        <div class="footer_grid">
+          <div class="footer_col">
+            <h4 class="footer_heading">Company</h4>
+            <a href="#">About Us</a><a href="#">Blog</a><a href="#">Careers</a><a href="#">FAQ</a><a href="#">Privacy &amp; Terms</a><a href="#">Sitemap</a>
+          </div>
+          <div class="footer_col">
+            <h4 class="footer_heading">Sell Parking</h4>
+            <a href="#">Multifamily Apartments</a><a href="#">Hotels</a>
+            <h4 class="footer_heading is-spaced">Find Group Parking</h4>
+            <a href="#">Construction</a><a href="#" aria-current="page">Rental Car Management</a><a href="#">Healthcare</a>
+          </div>
+          <div class="footer_col">
+            <h4 class="footer_heading">Connect</h4>
+            <a href="tel:4154807275" class="footer_contact"><svg width="16" height="16" viewBox="3 2 17 17" aria-hidden="true"><path fill="#fff" d="M19.4142 15.1133C18.671 13.5624 17.4043 12.5501 15.5941 12.0985C15.3224 12.0306 15.0336 12.0978 14.8159 12.2752L13.3125 13.5037C13.019 13.7438 12.6042 13.7748 12.2811 13.5756C10.6912 12.5951 9.4047 11.3085 8.42407 9.7179C8.22492 9.39543 8.25591 8.98066 8.49594 8.68655L9.72445 7.18306C9.90184 6.96611 9.96909 6.67728 9.90118 6.40494C9.44881 4.59543 8.43725 3.32798 6.88634 2.58554C6.63641 2.46552 6.34099 2.47211 6.09635 2.60334C5.31624 3.02011 4.57043 3.49093 3.86345 4.0211C3.59308 4.2242 3.45592 4.55985 3.51264 4.89287C4.02106 7.90247 5.64729 11.0677 8.28955 13.7107C10.9325 16.3536 14.0971 17.9798 17.1073 18.4876C17.441 18.5436 17.7767 18.4071 17.9791 18.1368C18.5093 17.4299 18.9801 16.6834 19.3969 15.9039C19.5274 15.6586 19.5342 15.3639 19.4142 15.1133Z"/></svg>US: 415 480 7275</a>
+            <a href="tel:6474839070" class="footer_contact"><svg width="16" height="16" viewBox="3 2 17 17" aria-hidden="true"><path fill="#fff" d="M19.4142 15.1133C18.671 13.5624 17.4043 12.5501 15.5941 12.0985C15.3224 12.0306 15.0336 12.0978 14.8159 12.2752L13.3125 13.5037C13.019 13.7438 12.6042 13.7748 12.2811 13.5756C10.6912 12.5951 9.4047 11.3085 8.42407 9.7179C8.22492 9.39543 8.25591 8.98066 8.49594 8.68655L9.72445 7.18306C9.90184 6.96611 9.96909 6.67728 9.90118 6.40494C9.44881 4.59543 8.43725 3.32798 6.88634 2.58554C6.63641 2.46552 6.34099 2.47211 6.09635 2.60334C5.31624 3.02011 4.57043 3.49093 3.86345 4.0211C3.59308 4.2242 3.45592 4.55985 3.51264 4.89287C4.02106 7.90247 5.64729 11.0677 8.28955 13.7107C10.9325 16.3536 14.0971 17.9798 17.1073 18.4876C17.441 18.5436 17.7767 18.4071 17.9791 18.1368C18.5093 17.4299 18.9801 16.6834 19.3969 15.9039C19.5274 15.6586 19.5342 15.3639 19.4142 15.1133Z"/></svg>CA: 647 483 9070</a>
+            <a href="mailto:team@whereipark.com" class="footer_contact"><svg width="16" height="16" viewBox="3 3 17 14" aria-hidden="true"><path fill="#fff" d="M17.7856 3.5H5.21427C4.27143 3.5 3.5 4.29183 3.5 5.27275V6.07639L11.2313 10.3546C11.4027 10.4491 11.6027 10.4491 11.7742 10.3546L18.357 6.66141L19.4998 6.01732V5.27277C19.4998 4.29185 18.7342 3.5 17.7856 3.5Z"/><path fill="#fff" d="M12.317 11.4005C12.0599 11.5364 11.7799 11.6073 11.4999 11.6073C11.2256 11.6073 10.9456 11.5364 10.6885 11.4005L3.5 7.41763V14.7273C3.5 15.7023 4.27143 16.5 5.21427 16.5H17.7856C18.7342 16.5 19.4999 15.7023 19.4999 14.7273V7.37036L18.3571 8.00854L12.317 11.4005Z"/></svg>team@whereipark.com</a>
+            <div class="footer_social">
+              <a href="#" aria-label="Facebook"><svg width="13" height="21" viewBox="0 0 13 21"><path fill="#fff" d="M10.9375 4.625C11.6484 4.625 12.25 5.22656 12.25 5.9375V15.5625C12.25 16.3008 11.6484 16.875 10.9375 16.875H7.16406V12.7188H8.75L9.05078 10.75H7.16406V9.49219C7.16406 8.94531 7.4375 8.42578 8.28516 8.42578H9.13281V6.75781C9.13281 6.75781 8.36719 6.62109 7.60156 6.62109C6.07031 6.62109 5.05859 7.57812 5.05859 9.27344V10.75H3.33594V12.7188H5.05859V16.875H1.3125C0.574219 16.875 0 16.3008 0 15.5625V5.9375C0 5.22656 0.574219 4.625 1.3125 4.625H10.9375Z"/></svg></a>
+              <a href="#" aria-label="X (Twitter)"><svg width="14" height="21" viewBox="0 0 14 21"><path fill="#fff" d="M12.5508 7.90625C12.5508 8.04297 12.5508 8.15234 12.5508 8.28906C12.5508 12.0898 9.67969 16.4375 4.40234 16.4375C2.76172 16.4375 1.25781 15.9727 0 15.1523C0.21875 15.1797 0.4375 15.207 0.683594 15.207C2.02344 15.207 3.25391 14.7422 4.23828 13.9766C2.98047 13.9492 1.91406 13.1289 1.55859 11.9805C1.75 12.0078 1.91406 12.0352 2.10547 12.0352C2.35156 12.0352 2.625 11.9805 2.84375 11.9258C1.53125 11.6523 0.546875 10.5039 0.546875 9.10938V9.08203C0.929688 9.30078 1.39453 9.41016 1.85938 9.4375C1.06641 8.91797 0.574219 8.04297 0.574219 7.05859C0.574219 6.51172 0.710938 6.01953 0.957031 5.60938C2.37891 7.33203 4.51172 8.48047 6.89062 8.61719C6.83594 8.39844 6.80859 8.17969 6.80859 7.96094C6.80859 6.375 8.09375 5.08984 9.67969 5.08984C10.5 5.08984 11.2383 5.41797 11.7852 5.99219C12.4141 5.85547 13.043 5.60938 13.5898 5.28125C13.3711 5.96484 12.9336 6.51172 12.332 6.86719C12.9062 6.8125 13.4805 6.64844 13.9727 6.42969C13.5898 7.00391 13.0977 7.49609 12.5508 7.90625Z"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg width="14" height="21" viewBox="0 0 14 21"><path fill="#fff" d="M6.15234 7.60547C7.875 7.60547 9.29688 9.02734 9.29688 10.75C9.29688 12.5 7.875 13.8945 6.15234 13.8945C4.40234 13.8945 3.00781 12.5 3.00781 10.75C3.00781 9.02734 4.40234 7.60547 6.15234 7.60547ZM6.15234 12.8008C7.27344 12.8008 8.17578 11.8984 8.17578 10.75C8.17578 9.62891 7.27344 8.72656 6.15234 8.72656C5.00391 8.72656 4.10156 9.62891 4.10156 10.75C4.10156 11.8984 5.03125 12.8008 6.15234 12.8008ZM10.1445 7.49609C10.1445 7.90625 9.81641 8.23438 9.40625 8.23438C8.99609 8.23438 8.66797 7.90625 8.66797 7.49609C8.66797 7.08594 8.99609 6.75781 9.40625 6.75781C9.81641 6.75781 10.1445 7.08594 10.1445 7.49609ZM12.2227 8.23438C12.2773 9.24609 12.2773 12.2812 12.2227 13.293C12.168 14.2773 11.9492 15.125 11.2383 15.8633C10.5273 16.5742 9.65234 16.793 8.66797 16.8477C7.65625 16.9023 4.62109 16.9023 3.60938 16.8477C2.625 16.793 1.77734 16.5742 1.03906 15.8633C0.328125 15.125 0.109375 14.2773 0.0546875 13.293C0 12.2812 0 9.24609 0.0546875 8.23438C0.109375 7.25 0.328125 6.375 1.03906 5.66406C1.77734 4.95312 2.625 4.73438 3.60938 4.67969C4.62109 4.625 7.65625 4.625 8.66797 4.67969C9.65234 4.73438 10.5273 4.95312 11.2383 5.66406C11.9492 6.375 12.168 7.25 12.2227 8.23438ZM10.9102 14.3594C11.2383 13.5664 11.1562 11.6523 11.1562 10.75C11.1562 9.875 11.2383 7.96094 10.9102 7.14062C10.6914 6.62109 10.2812 6.18359 9.76172 5.99219C8.94141 5.66406 7.02734 5.74609 6.15234 5.74609C5.25 5.74609 3.33594 5.66406 2.54297 5.99219C1.99609 6.21094 1.58594 6.62109 1.36719 7.14062C1.03906 7.96094 1.12109 9.875 1.12109 10.75C1.12109 11.6523 1.03906 13.5664 1.36719 14.3594C1.58594 14.9062 1.99609 15.3164 2.54297 15.5352C3.33594 15.8633 5.25 15.7812 6.15234 15.7812C7.02734 15.7812 8.94141 15.8633 9.76172 15.5352C10.2812 15.3164 10.7188 14.9062 10.9102 14.3594Z"/></svg></a>
+              <a href="#" aria-label="LinkedIn"><svg width="13" height="21" viewBox="0 0 13 21"><path fill="#fff" d="M11.375 4.625C11.8398 4.625 12.25 5.03516 12.25 5.52734V16C12.25 16.4922 11.8398 16.875 11.375 16.875H0.847656C0.382812 16.875 0 16.4922 0 16V5.52734C0 5.03516 0.382812 4.625 0.847656 4.625H11.375ZM3.69141 15.125V9.30078H1.88672V15.125H3.69141ZM2.78906 8.48047C3.36328 8.48047 3.82812 8.01562 3.82812 7.44141C3.82812 6.86719 3.36328 6.375 2.78906 6.375C2.1875 6.375 1.72266 6.86719 1.72266 7.44141C1.72266 8.01562 2.1875 8.48047 2.78906 8.48047ZM10.5 15.125V11.9258C10.5 10.3672 10.1445 9.13672 8.3125 9.13672C7.4375 9.13672 6.83594 9.62891 6.58984 10.0938H6.5625V9.30078H4.83984V15.125H6.64453V12.2539C6.64453 11.4883 6.78125 10.75 7.73828 10.75C8.66797 10.75 8.66797 11.625 8.66797 12.2812V15.125H10.5Z"/></svg></a>
+            </div>
+          </div>
+          <div class="footer_col">
+            <h4 class="footer_heading">Book Parking</h4>
+            <div class="footer_cities">
+              <a href="#">Austin</a><a href="#">Boston</a><a href="#">Chicago</a><a href="#">Dallas</a><a href="#">Houston</a><a href="#">Los Angeles</a><a href="#">Miami</a><a href="#">Minneapolis</a><a href="#">Montreal</a><a href="#">Nashville</a><a href="#">Denver</a>
+              <a href="#">New York</a><a href="#">Ottawa</a><a href="#">Philadelphia</a><a href="#">Pittsburgh</a><a href="#">Portland</a><a href="#">San Diego</a><a href="#">San Francisco</a><a href="#">Seattle</a><a href="#">Toronto</a><a href="#">Vancouver</a><a href="#">Washington DC</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <div class="footer_group">
+            <img src="images/spacer-technologies.png" alt="Spacer Technologies" width="276" height="56" loading="lazy">
+            <span>WhereiPark is a part of the Spacer Technologies Group</span>
+          </div>
+          <img src="images/spacer-brands.png" alt="Spacer, Spacer.com, Parkhound and WhereiPark" class="footer_brands" width="716" height="77" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script src="https://js.hsforms.net/forms/embed/22317901.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>
