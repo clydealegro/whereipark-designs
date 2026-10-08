@@ -228,14 +228,16 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero_image { width: 100%; }
 
 /* ---------- Logos ---------- */
-.section_logos { padding: 3rem 0 4rem; background: var(--color-white); }
+.section_logos { padding: 3.75rem 0; background: var(--color-tint); }
 .logos_heading {
   text-align: center;
   font-size: 1.25rem;
+  line-height: 1.2;
   font-weight: 600;
   color: var(--color-heading);
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.75rem;
 }
+.logos_heading .is-mobile { display: none; }
 .logos_image { margin: 0 auto; width: 100%; max-width: 76rem; }
 
 /* ---------- Feature cards ---------- */
@@ -464,7 +466,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .announce_component { font-size: 0.75rem; padding: 0.5rem 2.5rem 0.5rem 1rem; text-align: left; }
   .navbar_logo { width: 8.5rem; }
   .hero_image-wrapper { display: none; }
-  .section_logos { background: var(--color-tint); }
+  .logos_heading { margin-bottom: 2.5rem; }
+  .logos_heading .is-desktop { display: none; }
+  .logos_heading .is-mobile { display: inline; }
   .logos_image { max-width: 17.625rem; }
   .section_hero { padding-bottom: 3rem; }
   .built-for_grid, .benefits_grid { grid-template-columns: 1fr; gap: 1.25rem; }
