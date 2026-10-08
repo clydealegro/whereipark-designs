@@ -350,14 +350,25 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .option-tile:hover { transform: translateY(-3px); background: var(--color-tint); }
 
-/* ---------- FAQ ---------- */
-.faq_list { margin-top: 3rem; display: flex; flex-direction: column; gap: 0.5rem; }
+/* ---------- FAQ (Figma 1441:858) ---------- */
+.section_faq .padding-section-large { padding-top: 6rem; padding-bottom: 6rem; }
+.faq_heading {
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-heading);
+}
+.faq_list { margin-top: 4rem; display: flex; flex-direction: column; gap: 1rem; }
+/* Item padding is 24px all round: vertical padding sits on the button so the
+   whole row stays clickable, horizontal padding on the item. */
 .faq_item { border-radius: var(--radius-card); padding: 0 1.5rem; transition: background-color 0.2s ease; }
-.faq_item.is-open { background: var(--color-card); }
+.faq_item.is-open { background: #fafafa; }
 .faq_question {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   padding: 1.5rem 0;
   border: 0;
@@ -367,6 +378,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: var(--color-heading);
   cursor: pointer;
 }
+.faq_item.is-open .faq_question { font-size: 1.125rem; padding-bottom: 0; }
 /* Plus/minus drawn with two gradient bars so they stay centered and crisp;
    the vertical bar collapses when the item opens. */
 .faq_question::before {
@@ -389,9 +401,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   transform: rotate(180deg);
 }
 .faq_answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.25s ease; }
-.faq_answer > p { overflow: hidden; padding-left: 2.5rem; color: var(--color-body); line-height: 1.5rem; }
+.faq_answer > p { overflow: hidden; padding-left: 2.5rem; font-size: 1.125rem; line-height: 1.5rem; color: var(--color-body); }
 .faq_item.is-open .faq_answer { grid-template-rows: 1fr; }
-.faq_item.is-open .faq_answer > p { padding-bottom: 1.5rem; }
+.faq_item.is-open .faq_answer > p { padding-top: 1.25rem; padding-bottom: 1.5rem; }
 
 /* ---------- Form ---------- */
 .section_form { background: linear-gradient(180deg, #f2fafc 0%, #e7f2f4 100%); }
@@ -489,8 +501,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .option-tile svg { width: 3rem; height: 3rem; }
   .option-tile:last-child { grid-column: 1 / -1; justify-self: center; width: calc(50% - 0.375rem); }
   .check-list { flex-direction: column; align-items: flex-start; }
-  .faq_item { padding: 0 1rem; }
-  .faq_answer > p { padding-left: 0; }
+  .section_faq .padding-section-large { padding-top: 3.75rem; padding-bottom: 3.75rem; }
   .form_card { padding: 1.5rem 1rem; }
   .footer_grid { grid-template-columns: 1fr; }
   .footer_bottom { flex-direction: column; align-items: flex-start; }
