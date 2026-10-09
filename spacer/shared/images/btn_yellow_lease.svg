@@ -1,0 +1,54 @@
+<svg version="1.1"
+		 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+		 x="0px" y="0px" width="302.5px" height="45px" viewBox="0 0 302.5 45" style="enable-background:new 0 0 302.5 45;"
+		 xml:space="preserve">
+	<style type="text/css">
+		.st0{fill:#FCB827;}
+		.st1{fill:#FECC46;}
+		.st2{opacity:0.1;}
+		.st3{fill:#374654;}
+		.st4{display:none;fill:#FECC46;}
+		.st5{font-family:'TeXGyreAdventor-Bold';}
+		.st6{font-size:12.2182;}
+		.st7{display:none;}
+		.st8{display:inline;fill:#FECC46;}
+	</style>
+	<font horiz-adv-x="1000">
+	<font-face font-family="TeXGyreAdventor-Bold" units-per-em="1000" underline-position="-93" underline-thickness="90"/>
+	<missing-glyph horiz-adv-x="280"/>
+	<glyph unicode="F" horiz-adv-x="480" d="M444,608l0,131l-376,0l0,-739l137,0l0,303l228,0l0,131l-228,0l0,174z"/>
+	<glyph unicode="e" horiz-adv-x="640" d="M608,269C608,441 487,567 322,567C159,567 30,438 30,275C30,113 161,-13 330,-13C442,-13 557,50 594,164l-145,0C415,124 382,109 327,109C248,109 190,151 174,218l429,0C607,237 608,249 608,269M477,335l-307,0C191,406 245,445 324,445C406,445 460,406 477,335z"/>
+	<glyph unicode="r" horiz-adv-x="320" d="M306,439l0,128l-10,0C239,567 211,551 176,500l0,54l-122,0l0,-554l133,0l0,308C187,394 226,437 306,439z"/>
+	</font>
+	
+		<defs>
+	</defs>
+	<path class="st0" d="M297,45H3c-1.7,0-3-1.3-3-3V5c0-1.7,1.3-3,3-3h294c1.7,0,3,1.3,3,3v37C300,43.7,298.7,45,297,45z"/>
+	<path class="st1" d="M297,43H3c-1.7,0-3-1.3-3-3V3c0-1.7,1.3-3,3-3h294c1.7,0,3,1.3,3,3v37C300,41.7,298.7,43,297,43z"/>
+	<g>
+		<polygon class="st2" points="300.5,36.5 246.5,36.5 251.6,23.8 246.5,11 300.5,11 	"/>
+		<polygon class="st3" points="302.5,34.5 248.5,34.5 253.6,21.7 248.5,9 302.5,9 	"/>
+		<polygon points="300,37 300,34.5 302.5,34.5 	"/>
+		<text transform="matrix(1 0 0 1 263.8032 25.6736)" class="st4 st5 st6">Free</text>
+		<g>
+			<path class="st1" d="M266.5,18.2v2.1h2.8V22h-2.8v3.7h-1.7v-9h4.6v1.6H266.5z"/>
+			<path class="st1" d="M272.6,21.9v3.8H271v-6.8h1.5v0.7c0.4-0.6,0.8-0.8,1.5-0.8h0.1v1.6C273.1,20.3,272.6,20.9,272.6,21.9z"/>
+			<path class="st1" d="M282,23h-5.2c0.2,0.8,0.9,1.3,1.9,1.3c0.7,0,1.1-0.2,1.5-0.7h1.8c-0.5,1.4-1.9,2.2-3.2,2.2
+				c-2.1,0-3.7-1.5-3.7-3.5c0-2,1.6-3.6,3.6-3.6c2,0,3.5,1.5,3.5,3.6C282,22.6,282,22.8,282,23z M278.6,20.2c-1,0-1.6,0.5-1.9,1.3
+				h3.8C280.2,20.7,279.6,20.2,278.6,20.2z"/>
+			<path class="st1" d="M290.4,23h-5.2c0.2,0.8,0.9,1.3,1.9,1.3c0.7,0,1.1-0.2,1.5-0.7h1.8c-0.5,1.4-1.9,2.2-3.2,2.2
+				c-2.1,0-3.7-1.5-3.7-3.5c0-2,1.6-3.6,3.6-3.6c2,0,3.5,1.5,3.5,3.6C290.5,22.6,290.5,22.8,290.4,23z M287,20.2
+				c-1,0-1.6,0.5-1.9,1.3h3.8C288.7,20.7,288,20.2,287,20.2z"/>
+		</g>
+	</g>
+      <defs>
+    <polygon id="polyclip" points="-42.167,40 -230,40 -190,0 -2.167,0"/>
+  </defs>
+  <clipPath id="clipper">
+    <use xlink:href="#polyclip"  style="overflow:visible;"/>
+  </clipPath>
+  <g style="opacity:0.2;clip-path:url(#clipper);">
+    <path style="fill:#FFFFFF;" d="M297,45H3c-1.7,0-3-1.3-3-3V5c0-1.7,1.3-3,3-3h294c1.7,0,3,1.3,3,3v37C300,43.7,298.7,45,297,45z"/>
+  </g>
+  <animateTransform xlink:href="#polyclip" attributeName="transform" type="translate" from="-1000 0" to="2500 0" begin="0s" dur="4s" repeatCount="indefinite"/>
+	</svg>

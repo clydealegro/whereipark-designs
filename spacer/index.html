@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spacer US Host Pages</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: "Inter", system-ui, sans-serif; color: #181d27; background: #f8f9fa; line-height: 1.55; }
+    main { max-width: 48rem; margin: 0 auto; padding: 4rem 1rem; }
+    h1 { font-size: 1.75rem; font-weight: 600; margin: 0 0 0.5rem; }
+    h2 { font-size: 1.125rem; font-weight: 600; margin: 3rem 0 0.75rem; }
+    p, li { color: #535862; }
+    p { margin: 0 0 1rem; }
+    ul { padding-left: 1.25rem; margin: 0 0 1rem; }
+    li { margin-bottom: 0.375rem; }
+    code { font-size: 0.875em; background: #eef0f2; padding: 0.1em 0.35em; border-radius: 4px; }
+    a { color: #0b7a91; }
+    .cards { display: grid; gap: 0.75rem; }
+    a.card { display: block; padding: 1.25rem 1.5rem; background: #fff; border: 1px solid #e9eaeb; border-radius: 12px; text-decoration: none; color: inherit; }
+    a.card:hover { border-color: #00a7ca; }
+    a.card strong { display: block; font-weight: 600; }
+    a.card span { color: #535862; font-size: 0.875rem; word-break: break-word; }
+    .meta { font-size: 0.875rem; margin-top: 0.5rem; }
+    .back { display: inline-block; margin-bottom: 2rem; font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../">&larr; All prototypes</a>
+    <h1>Spacer US host pages</h1>
+    <p>Five new host child pages built on the <a href="https://www.spacer.com/rent-my-driveway" target="_blank" rel="noopener">rent-my-driveway</a> template. This is a build reference for devs, not the live site.</p>
+
+    <div class="cards">
+      <a class="card" href="rent-my-garage/">
+        <strong>Rent Out Your Garage and Earn Extra Income with Spacer</strong>
+        <span>spacer.com/rent-my-garage</span>
+      </a>
+      <a class="card" href="rent-my-space-for-storage/">
+        <strong>Rent Out Your Space for Storage and Earn Extra Income with Spacer</strong>
+        <span>spacer.com/rent-my-space-for-storage</span>
+      </a>
+      <a class="card" href="rent-my-land-for-rv-and-boat-storage/">
+        <strong>Rent Out Your Land for RV and Boat Storage with Spacer</strong>
+        <span>spacer.com/rent-my-land-for-rv-and-boat-storage</span>
+      </a>
+      <a class="card" href="rent-my-parking-lot/">
+        <strong>Rent Out Your Parking Lot and Earn Extra Income with Spacer</strong>
+        <span>spacer.com/rent-my-parking-lot</span>
+      </a>
+      <a class="card" href="rent-my-apartment-parking-space/">
+        <strong>Earn Extra Income From Your Apartment Parking Space</strong>
+        <span>spacer.com/rent-my-apartment-parking-space</span>
+      </a>
+    </div>
+
+    <h2>Content sources</h2>
+    <ul>
+      <li><a href="https://docs.google.com/document/d/1I3hmjHKOBmwTe6D1jaJDtcyJphLGBNRH2u1dLfQfUHM/edit" target="_blank" rel="noopener">Rent my garage</a></li>
+      <li><a href="https://docs.google.com/document/d/1oilS8LrZbOkged6DnaWw1_JEhWSzJooY1b28a8pApPc/edit" target="_blank" rel="noopener">Rent my space for storage</a></li>
+      <li><a href="https://docs.google.com/document/d/1ubfFxY9W32BE7Ac9HCxKLAVbwizEu9YzOGrRK3HFERs/edit" target="_blank" rel="noopener">Rent my land for RV and boat storage</a></li>
+      <li><a href="https://docs.google.com/document/d/1crTDx2QHdxbzrlwZNi-1_QycSpU47nSMJbS3WADq-28/edit" target="_blank" rel="noopener">Rent my parking lot</a></li>
+      <li><a href="https://docs.google.com/document/d/18-7A5AB8_KMIOpAHghVvhNNF3_ejCkjsIEO9cEgi7Ik/edit" target="_blank" rel="noopener">Rent my apartment parking space</a></li>
+    </ul>
+    <p>Body copy is verbatim from each doc. Doc links that went through Google's redirect wrapper now point straight at their targets.</p>
+
+    <h2>What changes per page</h2>
+    <ul>
+      <li><strong>Hero:</strong> the H1 is the doc title. The subheading is the doc's opening line. Unlike driveway, there is no "Earn up to $X/month" figure, because the docs say earnings are not guaranteed. The CTA is unchanged ("List My Parking Spot" &rarr; <code>/rent-out-my-space</code>).</li>
+      <li><strong>Intro (<code>.sec-details</code>):</strong> the doc paragraphs before the first H2.</li>
+      <li><strong>Body (<code>.sec-landing-details</code>):</strong> everything from the first H2 to the end. FAQs render as H3 plus paragraphs inside the same text block, with no accordion.</li>
+      <li><strong>New in the body block:</strong> <code>h2</code>/<code>h3</code>, <code>ul</code>/<code>ol</code> and one table (parking lot page only). Driveway never needed these. They reuse existing utility classes, and the few extra rules are in <code>shared/prototype.css</code>.</li>
+      <li><strong>Head:</strong> <code>&lt;title&gt;</code> is "H1 | Spacer". The meta description comes from the opening line. Canonical points to the production URL.</li>
+      <li><strong>Schema (optional):</strong> each page carries FAQPage JSON-LD built from its FAQ section.</li>
+    </ul>
+
+    <h2>What stays identical</h2>
+    <p>Announcement bar, nav, renter testimonials, city grid, Popular Areas, Why Host on Spacer, the commuters map, One Tree Planted and the footer. The markup comes from the live driveway page, and <code>shared/spacerus.css</code> is the live compiled stylesheet.</p>
+
+    <h2>Prototype vs production</h2>
+    <ul>
+      <li>The Stimulus controllers (<code>campaign-banner</code>, <code>nav-spus</code>, <code>landing-page</code>) are stood in for by <code>shared/script.js</code>. Production should keep its own controllers.</li>
+      <li>Left out: the chat widget, the 10% off popup, analytics and ad trackers.</li>
+      <li>Nav and footer links point to live spacer.com.</li>
+    </ul>
+
+    <h2>Flags for the template owner</h2>
+    <ul>
+      <li>Under "Why Host on Spacer?", the descriptions for "It's FREE and easy to list", "Start Earning Quickly" and "You set the rules" are written for renters, not hosts. They were left as they are live.</li>
+      <li>On live, all three testimonial images have <code>alt="Rachel, Boston"</code>. Each one is corrected here.</li>
+      <li>When the pages ship, add them to the footer's host links next to "Rent My Driveway".</li>
+    </ul>
+  </main>
+</body>
+</html>

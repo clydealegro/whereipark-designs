@@ -6,6 +6,19 @@ Coded prototypes of WhereiPark group parking landing pages, built from the Figma
 |---|---|---|
 | Car Rental & Fleets | `/car-rental/` | [Desktop 1441:596](https://www.figma.com/design/IEHm1TuXfSn1DT8Un9OhUD/Construction-Landing-Page?node-id=1441-596) |
 
+### Spacer US host pages
+Five child pages on the [spacer.com/rent-my-driveway](https://www.spacer.com/rent-my-driveway) template, for dev handoff. Handoff notes live at `/spacer/`.
+
+| Page | Path | Production URL |
+|---|---|---|
+| Rent my garage | `/spacer/rent-my-garage/` | spacer.com/rent-my-garage |
+| Rent my space for storage | `/spacer/rent-my-space-for-storage/` | spacer.com/rent-my-space-for-storage |
+| Rent my land for RV and boat storage | `/spacer/rent-my-land-for-rv-and-boat-storage/` | spacer.com/rent-my-land-for-rv-and-boat-storage |
+| Rent my parking lot | `/spacer/rent-my-parking-lot/` | spacer.com/rent-my-parking-lot |
+| Rent my apartment parking space | `/spacer/rent-my-apartment-parking-space/` | spacer.com/rent-my-apartment-parking-space |
+
+These pages use Spacer's own compiled stylesheet (`spacer/shared/spacerus.css`) and Bootstrap markup, not Client-First, because they map to the spacer.com codebase rather than Webflow.
+
 ## Stack
 Static HTML, CSS, and vanilla JS. No build step. Class names follow Client-First (`section_`, `padding-global`, `container-large`) so the markup maps cleanly to Webflow.
 

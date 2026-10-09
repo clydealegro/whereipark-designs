@@ -1,0 +1,42 @@
+/* Prototype-only additions on top of spacerus.css.
+   The driveway body block is plain paragraphs; the new pages also carry
+   headings, lists and (parking lot) a table inside .sec-landing-details. */
+
+.spacerus_pages .sec-landing-details .sec-content > h2:first-of-type {
+  margin-top: 0 !important;
+}
+
+.spacerus_pages .sec-landing-details .sec-content ul,
+.spacerus_pages .sec-landing-details .sec-content ol {
+  padding-left: 1.5rem;
+}
+
+.spacerus_pages .sec-landing-details .sec-content li {
+  margin-bottom: 0.5rem;
+}
+
+.spacerus_pages .sec-landing-details .sec-content table th,
+.spacerus_pages .sec-landing-details .sec-content table td {
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+}
+
+/* Small badge back to the handoff page. Not part of the production build. */
+.proto-badge {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 1080;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #212529;
+  color: #fff;
+  font: 600 12px/1.4 Inter, sans-serif;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.proto-badge:hover {
+  color: #fff;
+  opacity: 1;
+}
