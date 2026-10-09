@@ -70,6 +70,15 @@
     <h2>What changes per page</h2>
     <ul>
       <li><strong>Hero:</strong> the H1 is the doc title. The subheading is the doc's opening line. Unlike driveway, there is no "Earn up to $X/month" figure, because the docs say earnings are not guaranteed. The CTA is unchanged ("List My Parking Spot" &rarr; <code>/rent-out-my-space</code>).</li>
+      <li><strong>Hero photo:</strong> each page has its own <code>.sec-hero</code> background, set by the body class in <code>shared/prototype.css</code>. A light left-side fade keeps the dark text readable. Below 992px it becomes a full wash.
+        <ul>
+          <li>Garage: <a href="https://unsplash.com/photos/a-bright-yellow-garage-with-three-doors-in-snow-4wZg91QFiCc" target="_blank" rel="noopener">Unsplash, @sijmen89</a></li>
+          <li>Storage: Spacer's <code>garage-near-me-desktop-hero.jpg</code></li>
+          <li>RV and boat: <a href="https://unsplash.com/photos/a-motor-home-parked-in-the-grass-near-some-trees-0b0_BUdtdAg" target="_blank" rel="noopener">Unsplash, @brodus_k</a></li>
+          <li>Parking lot: Spacer's <code>business/property-investor/hero-background.webp</code></li>
+          <li>Apartment: Spacer's <code>business/small-business/hero-background.webp</code></li>
+        </ul>
+      </li>
       <li><strong>Intro (<code>.sec-details</code>):</strong> the doc paragraphs before the first H2.</li>
       <li><strong>Body (<code>.sec-landing-details</code>):</strong> everything from the first H2 to the end. FAQs render as H3 plus paragraphs inside the same text block, with no accordion.</li>
       <li><strong>New in the body block:</strong> <code>h2</code>/<code>h3</code>, <code>ul</code>/<code>ol</code> and one table (parking lot page only). Driveway never needed these. They reuse existing utility classes, and the few extra rules are in <code>shared/prototype.css</code>.</li>

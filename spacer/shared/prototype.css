@@ -21,6 +21,41 @@
   vertical-align: top;
 }
 
+/* Per-page hero photos. Same .sec-hero block as driveway; only the image changes.
+   The light fade keeps the dark hero text readable over busier photos.
+   Garage and RV/boat are Unsplash (free license, credits on /spacer/);
+   storage, parking lot and apartment come from Spacer's own asset library. */
+.spacerus_pages .sec-hero {
+  --hero-fade: linear-gradient(90deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.82) 38%, rgba(255, 255, 255, 0) 68%);
+}
+
+.spacerus_pages.rent_my_garage .sec-hero {
+  background: var(--hero-fade), url(images/hero-garage.jpg) no-repeat center 60% / cover;
+}
+
+.spacerus_pages.rent_my_space_for_storage .sec-hero {
+  background: var(--hero-fade), url(images/hero-storage.jpg) no-repeat right center / cover;
+}
+
+.spacerus_pages.rent_my_land_for_rv_and_boat_storage .sec-hero {
+  background: var(--hero-fade), url(images/hero-rv-boat.jpg) no-repeat center 65% / cover;
+}
+
+.spacerus_pages.rent_my_parking_lot .sec-hero {
+  background: var(--hero-fade), url(images/hero-parking-lot.webp) no-repeat center center / cover;
+}
+
+.spacerus_pages.rent_my_apartment_parking_space .sec-hero {
+  background: var(--hero-fade), url(images/hero-apartment.webp) no-repeat center 70% / cover;
+}
+
+/* Below 992px the hero stacks, so fade the whole photo instead of one side. */
+@media (max-width: 991px) {
+  .spacerus_pages .sec-hero {
+    --hero-fade: linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82));
+  }
+}
+
 /* Small badge back to the handoff page. Not part of the production build. */
 .proto-badge {
   position: fixed;
