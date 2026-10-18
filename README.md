@@ -6,6 +6,7 @@ Coded prototypes of WhereiPark group parking landing pages, built from the Figma
 |---|---|---|
 | Car Rental & Fleets | `/car-rental/` | [Desktop 1441:596](https://www.figma.com/design/IEHm1TuXfSn1DT8Un9OhUD/Construction-Landing-Page?node-id=1441-596) |
 | Healthcare (v2, Sofia's July 7 feedback) | `/healthcare/` | [Healthcare v2 1563:733](https://www.figma.com/design/IEHm1TuXfSn1DT8Un9OhUD/Construction-Landing-Page?node-id=1563-733) |
+| Education (v1, Healthcare v2 layout) | `/education/` | [Education v1 1572:1838](https://www.figma.com/design/IEHm1TuXfSn1DT8Un9OhUD/Construction-Landing-Page?node-id=1572-1838) |
 
 ### Spacer US host pages
 Five child pages on the [spacer.com/rent-my-driveway](https://www.spacer.com/rent-my-driveway) template, for dev handoff. Handoff notes live at `/spacer/`.
