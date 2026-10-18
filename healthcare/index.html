@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Healthcare v2 Prototype</title>
+<meta name="description" content="WhereiPark Healthcare landing page v2 prototype with Sofia's July 7 feedback applied.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #00a7ca;
+    --brand-dark: #008cab;
+    --heading: #181d27;
+    --body: #535862;
+    --muted: #717680;
+    --card: #f8f9fa;
+    --tint: #eaf5f7;
+    --tint-soft: #f4fafb;
+    --hero-bg: #f0f7f9;
+    --page: #f8feff;
+    --line: #e9eaeb;
+    --footer: #212529;
+    --check: #12b76a;
+    --note: #f04438;
+    --radius: 16px;
+    --gutter: 80px;
+    --max: 1440px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--page); color: var(--body); font-family: Inter, system-ui, -apple-system, sans-serif; font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { color: var(--heading); font-weight: 600; margin: 0; }
+  h2 { font-size: 36px; line-height: 44px; letter-spacing: -0.02em; }
+  p { margin: 0; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+  .section { padding: 96px 0; }
+  .center { text-align: center; }
+
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 20px; border-radius: 8px; border: 1px solid var(--brand); background: var(--brand); color: #fff; font: 600 16px/1 Inter, sans-serif; text-decoration: none; cursor: pointer; box-shadow: 0 1px 2px rgba(10,13,18,.05); transition: background .15s, border-color .15s; }
+  .btn:hover { background: var(--brand-dark); border-color: var(--brand-dark); }
+  .btn:focus-visible, .faq-q:focus-visible, .nav-link:focus-visible, .menu-toggle:focus-visible { outline: 3px solid #9be4f3; outline-offset: 2px; }
+
+  /* Announcement + nav */
+  .announce { background: var(--brand); color: #fff; font-size: 14px; text-align: center; padding: 8px 48px; position: relative; }
+  .announce a { color: #fff; }
+  .announce-close { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; padding: 4px 8px; }
+  .nav { background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.08); position: sticky; top: 0; z-index: 50; }
+  .nav-inner { max-width: var(--max); margin: 0 auto; padding: 0 32px 0 40px; height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .nav-logo img { height: 44px; width: auto; }
+  .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; margin: 0; padding: 0; }
+  .nav-link { font-size: 14px; font-weight: 500; color: #212529; text-decoration: none; background: none; border: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 8px 0; font-family: inherit; }
+  .nav-link .caret { width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid currentColor; }
+  .has-menu { position: relative; }
+  .dropdown { position: absolute; top: 100%; left: -12px; min-width: 200px; background: #fff; border-radius: 8px; box-shadow: 0 12px 24px rgba(10,13,18,.12); padding: 8px; display: none; list-style: none; margin: 0; }
+  .has-menu.open .dropdown { display: block; }
+  .dropdown a { display: block; padding: 8px 12px; border-radius: 6px; font-size: 14px; text-decoration: none; color: #212529; }
+  .dropdown a:hover { background: var(--tint); }
+  .nav-actions { display: flex; align-items: center; gap: 20px; }
+  .btn-sm { height: 40px; padding: 0 14px; font-size: 14px; border-radius: 6px; }
+  .btn-ghost { background: #f1f1f2; border-color: #f1f1f2; color: #212529; }
+  .btn-ghost:hover { background: #e4e4e6; border-color: #e4e4e6; }
+  .btn-sell { background: #00bbe0; border-color: #00bbe0; }
+  .menu-toggle { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; padding: 10px; }
+  .menu-toggle span { display: block; height: 2px; background: #212529; margin: 5px 0; border-radius: 2px; }
+
+  /* Hero */
+  .hero { position: relative; background: var(--hero-bg); overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: url(assets/map-bg.jpg) center/cover; opacity: .3; pointer-events: none; }
+  .hero .wrap { position: relative; padding-top: 32px; padding-bottom: 36px; }
+  .crumbs { font-size: 12px; color: var(--muted); display: flex; gap: 8px; margin-bottom: 42px; }
+  .crumbs a { text-decoration: none; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 638px; gap: 48px; align-items: center; }
+  .hero h1 { font-size: 40px; line-height: 50px; letter-spacing: -0.01em; max-width: 460px; }
+  .hero p { font-size: 20px; line-height: 30px; margin: 30px 0 28px; max-width: 450px; }
+  .hero-img { width: 100%; height: auto; aspect-ratio: 638 / 386; object-fit: cover; border-radius: 48% 12px 12px 48% / 60% 12px 12px 60%; }
+
+  /* Trusted */
+  .trusted { background: var(--tint); padding: 60px 0 64px; }
+  .trusted h2 { font-size: 20px; line-height: 30px; font-weight: 500; letter-spacing: 0; margin-bottom: 48px; }
+  .trusted img { margin: 0 auto; width: 100%; max-width: 1216px; }
+
+  /* Problem fold (new) */
+  .problem { background: #fff; }
+  .split { display: grid; grid-template-columns: 1fr 580px; gap: 64px; align-items: center; }
+  .split .lede { font-size: 20px; line-height: 30px; margin-top: 24px; }
+  .pains { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 20px; }
+  .pains li { display: flex; align-items: center; gap: 16px; font-size: 18px; line-height: 28px; }
+  .badge { flex: none; width: 56px; height: 56px; border-radius: 12px; background: var(--tint); display: grid; place-items: center; }
+  .badge img { width: 48px; height: 48px; }
+  .photo { width: 100%; height: auto; object-fit: cover; border-radius: var(--radius); }
+  .problem .photo { aspect-ratio: 580 / 480; }
+
+  /* The Fix fold (new) */
+  .fix { background: var(--tint-soft); }
+  .pill { display: inline-block; border: 1px solid #2d3236; border-radius: 100px; padding: 0 14px; font-size: 14px; line-height: 28px; letter-spacing: .2em; color: #2d3236; }
+  .fix-head { display: grid; justify-items: center; gap: 24px; text-align: center; }
+  .fix-head p { font-size: 20px; line-height: 30px; max-width: 820px; }
+  .fix .photo { aspect-ratio: 1280 / 440; margin-top: 48px; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 41px; margin-top: 48px; }
+  .stat { background: var(--tint); border-radius: var(--radius); padding: 30px; display: flex; align-items: center; gap: 30px; }
+  .stat img { width: 88px; height: 88px; flex: none; }
+  .stat strong { display: block; font-size: 20px; line-height: 30px; font-weight: 600; color: var(--body); }
+  .stat span { display: block; margin-top: 10px; line-height: 20px; }
+
+  /* Benefits */
+  .benefits { background: #fff; padding-top: 60px; }
+  .benefits h2 { margin-top: 30px; }
+  .benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 60px; margin-top: 64px; }
+  .benefit { background: var(--card); border-radius: var(--radius); padding: 50px 30px; text-align: center; }
+  .benefit img { width: 100px; height: 100px; margin: 0 auto 20px; }
+  .benefit h3 { font-size: 20px; line-height: 30px; color: var(--body); }
+  .benefit p { font-size: 18px; line-height: 28px; margin-top: 20px; }
+  .cta-row { margin-top: 64px; text-align: center; }
+
+  /* Steps */
+  .steps { background: linear-gradient(180deg, #f3fcfd 0%, #e2f1f2 100%); padding: 60px 0; }
+  .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 46px; margin-top: 60px; }
+  .step { background: #fff; border: 1px solid #c9e6eb; border-radius: var(--radius); padding: 50px 36px; text-align: center; }
+  .step img { width: 203px; height: 203px; margin: 0 auto 40px; object-fit: contain; }
+  .step h3 { font-size: 18px; line-height: 27px; font-weight: 700; color: #000; }
+  .step p { font-size: 18px; line-height: 27px; color: var(--heading); margin-top: 27px; }
+
+  /* Why */
+  .why { background: #fff; }
+  .why .split { grid-template-columns: 577px 1fr; gap: 64px; padding: 0 0 0 30px; }
+  .why-list { list-style: none; margin: 48px 0 0; padding: 0; display: grid; gap: 41px; }
+  .why-list li { display: flex; gap: 30px; }
+  .why-list img { width: 88px; height: 88px; flex: none; }
+  .why-list strong { display: block; font-size: 20px; line-height: 30px; color: var(--body); font-weight: 600; }
+  .why-list span { display: block; margin-top: 10px; line-height: 20px; }
+  .why-map { width: 100%; max-width: 504px; margin: 0 auto; }
+  .checks { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; list-style: none; padding: 0; margin: 64px 0 0; }
+  .checks li { display: flex; align-items: center; gap: 6px; }
+  .checks svg { flex: none; }
+
+  /* FAQ */
+  .faq { background: #fff; padding-top: 60px; }
+  .faq h2 { font-size: 40px; line-height: 50px; }
+  .faq-list { max-width: 1216px; margin: 64px auto 0; display: grid; gap: 8px; }
+  .faq-item { border-radius: var(--radius); transition: background .2s; }
+  .faq-item.open { background: #fafafa; }
+  .faq-q { width: 100%; display: flex; align-items: center; gap: 16px; text-align: left; background: none; border: 0; padding: 20px 24px; cursor: pointer; font: 600 16px/24px Inter, sans-serif; color: var(--heading); }
+  .faq-item.open .faq-q { font-size: 18px; }
+  .faq-icon { flex: none; width: 24px; height: 24px; border: 1.5px solid #a4a7ae; border-radius: 50%; position: relative; }
+  .faq-icon::before, .faq-icon::after { content: ""; position: absolute; left: 50%; top: 50%; width: 10px; height: 1.5px; background: #a4a7ae; transform: translate(-50%, -50%); }
+  .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform .2s; }
+  .faq-item.open .faq-icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+  .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .25s ease; }
+  .faq-item.open .faq-a { grid-template-rows: 1fr; }
+  .faq-a > div { overflow: hidden; }
+  .faq-a p { padding: 0 24px 24px 64px; font-size: 18px; line-height: 24px; }
+
+  /* Final CTA + form */
+  .final { background: var(--tint); }
+  .final h2 { max-width: 760px; margin: 0 auto; }
+  .form-card { text-align: left; max-width: 720px; margin: 48px auto 0; background: #fff; border-radius: var(--radius); padding: 40px; box-shadow: 0 12px 32px rgba(10,13,18,.06); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .field { display: grid; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+  .field label { font-size: 14px; font-weight: 500; color: #414651; }
+  .field input, .field select { height: 44px; border: 1px solid #d5d7da; border-radius: 8px; padding: 0 14px; font: 16px Inter, sans-serif; color: var(--heading); background: #fff; }
+  .field input:focus, .field select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 4px rgba(0,167,202,.15); }
+  .field input[aria-invalid="true"] { border-color: var(--note); }
+  .form-card .btn { width: 100%; margin-top: 28px; }
+  .form-note { font-size: 13px; color: var(--muted); text-align: center; margin-top: 12px; }
+  .form-done { text-align: center; padding: 24px 0; }
+  .form-done strong { display: block; color: var(--heading); font-size: 20px; margin-bottom: 8px; }
+
+  /* Footer */
+  .footer { background: var(--footer); color: #fff; font-size: 14px; }
+  .footer a { text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+  .foot-grid { max-width: var(--max); margin: 0 auto; padding: 48px 76px 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .foot-grid h4 { color: var(--brand); font-weight: 500; font-size: 14px; margin: 0 0 24px; }
+  .foot-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .foot-grid h4.sub { margin-top: 14px; margin-bottom: 18px; }
+  .cities { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+  .contact li { display: flex; align-items: center; gap: 10px; }
+  .socials { display: flex; gap: 10px; margin-top: 4px; }
+  .socials a { width: 16px; height: 16px; display: grid; place-items: center; }
+  .foot-bottom { max-width: var(--max); margin: 0 auto; padding: 32px 16px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid rgba(255,255,255,.04); }
+  .foot-bottom .group { display: flex; align-items: center; gap: 4px; color: #8a8f94; font-size: 14px; }
+  .foot-bottom .group img { height: 56px; width: auto; }
+  .foot-bottom .brands { height: 38px; width: auto; }
+
+  /* Review notes (prototype only) */
+  .note-tag { display: none; }
+  body.notes .is-changed { outline: 2px dashed var(--note); outline-offset: -10px; position: relative; }
+  body.notes .note-tag { display: block; position: absolute; top: 14px; left: 14px; z-index: 5; max-width: 340px; background: var(--note); color: #fff; font-size: 12px; line-height: 16px; font-weight: 500; padding: 6px 10px; border-radius: 6px; box-shadow: 0 4px 10px rgba(240,68,56,.25); }
+  .notes-toggle { position: fixed; left: 16px; bottom: 16px; z-index: 100; display: flex; align-items: center; gap: 8px; background: #101828; color: #fff; border: 0; border-radius: 999px; padding: 10px 16px; font: 500 13px Inter, sans-serif; cursor: pointer; box-shadow: 0 8px 20px rgba(16,24,40,.25); }
+  .notes-toggle .dot { width: 8px; height: 8px; border-radius: 50%; background: #667085; }
+  body.notes .notes-toggle .dot { background: var(--note); }
+
+  /* Tablet */
+  @media (max-width: 1180px) {
+    :root { --gutter: 40px; }
+    .nav-links { gap: 14px; }
+    .nav-actions { gap: 10px; }
+    .hero-grid { grid-template-columns: 1fr 1fr; }
+    .split, .why .split { grid-template-columns: 1fr 1fr; padding: 0; }
+    .problem .photo { aspect-ratio: 4 / 3.4; }
+    .stats { gap: 20px; }
+    .stat { gap: 16px; padding: 24px; }
+    .stat img { width: 64px; height: 64px; }
+    .step-grid { gap: 24px; }
+    .step { padding: 40px 24px; }
+    .step img { width: 160px; height: 160px; }
+    .foot-grid { padding: 48px 40px 40px; grid-template-columns: repeat(2, 1fr); }
+    .foot-bottom { flex-direction: column; align-items: flex-start; padding: 24px 40px 48px; }
+  }
+  @media (max-width: 1024px) {
+    .nav-links, .nav-actions { display: none; }
+    .menu-toggle { display: block; }
+    .nav.menu-open .nav-links, .nav.menu-open .nav-actions { display: flex; }
+    .nav.menu-open .nav-inner { flex-wrap: wrap; height: auto; padding-bottom: 20px; }
+    .nav.menu-open .nav-links { order: 3; flex-basis: 100%; flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 8px; border-top: 1px solid var(--line); }
+    .nav.menu-open .nav-actions { order: 4; flex-basis: 100%; flex-wrap: wrap; gap: 10px; }
+    .nav.menu-open .dropdown { position: static; box-shadow: none; padding: 0 0 0 12px; }
+  }
+
+  /* Mobile (matches the 390px Figma frame) */
+  @media (max-width: 767px) {
+    :root { --gutter: 32px; }
+    .section { padding: 60px 0 96px; }
+    .announce { font-size: 13px; padding: 8px 40px 8px 16px; }
+    .nav-inner { padding: 0 16px 0 20px; }
+    .nav-logo img { height: 38px; }
+    .crumbs { margin-bottom: 24px; }
+    .hero-grid, .split, .why .split { grid-template-columns: 1fr; gap: 32px; }
+    .hero h1 { font-size: 36px; line-height: 44px; }
+    .hero p { font-size: 18px; line-height: 28px; margin: 20px 0 24px; }
+    .hero .btn { width: 100%; }
+    .hero-img { border-radius: 12px; }
+    .trusted h2 { margin-bottom: 32px; }
+    .trusted img { width: 282px; }
+    .split .lede, .fix-head p { font-size: 18px; line-height: 28px; }
+    .pains li { font-size: 16px; line-height: 24px; }
+    .problem .photo { aspect-ratio: 326 / 260; }
+    .fix .photo { aspect-ratio: 326 / 220; margin-top: 32px; }
+    .stats { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+    .stat img { width: 72px; height: 72px; }
+    .benefit-grid, .step-grid { grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
+    .benefit { padding: 30px; }
+    .cta-row .btn { width: 100%; }
+    .step img { width: 203px; height: 203px; }
+    .why-list { gap: 32px; }
+    .why-list li { gap: 20px; }
+    .why-list img { width: 72px; height: 72px; }
+    .checks { flex-direction: column; align-items: flex-start; margin-top: 40px; }
+    .faq h2 { font-size: 36px; line-height: 44px; }
+    .faq-list { margin-top: 40px; }
+    .faq-q { padding: 16px; align-items: flex-start; }
+    .faq-a p { padding: 0 16px 20px 56px; font-size: 16px; }
+    .form-card { padding: 24px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr; padding: 48px 32px 24px; }
+    .foot-bottom { padding: 24px 32px 96px; }
+    .foot-bottom .group { flex-direction: column; align-items: flex-start; }
+    .foot-bottom .brands { height: auto; width: 100%; }
+    body.notes .note-tag { position: static; max-width: none; margin: -32px 16px 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .faq-a, .faq-icon::after { transition: none; }
+  }
+</style>
+</head>
+<body class="notes">
+
+<div class="announce" id="announce">
+  🚗 Booking monthly parking? <strong>Get 10% off now or save 50% later.</strong> <a href="#">Learn more</a>
+  <button class="announce-close" aria-label="Dismiss announcement" data-close-announce>&times;</button>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top" aria-label="WhereiPark home"><img src="assets/logo.svg" alt="WhereiPark" width="193" height="60"></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li class="has-menu">
+        <button class="nav-link" aria-expanded="false" data-dropdown>About Us <i class="caret"></i></button>
+        <ul class="dropdown"><li><a href="#">Our story</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li></ul>
+      </li>
+      <li><a class="nav-link" href="#">Group Parking</a></li>
+      <li class="has-menu">
+        <button class="nav-link" aria-expanded="false" data-dropdown>Cities <i class="caret"></i></button>
+        <ul class="dropdown"><li><a href="#">Toronto</a></li><li><a href="#">San Francisco</a></li><li><a href="#">Los Angeles</a></li><li><a href="#">New York</a></li><li><a href="#">All cities</a></li></ul>
+      </li>
+      <li><a class="nav-link" href="#">Be A Partner</a></li>
+      <li><a class="nav-link" href="#faq">FAQ</a></li>
+      <li><a class="nav-link" href="#get-started">Contact Us</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-sm btn-sell" href="#">Sell Parking</a>
+      <a class="btn btn-sm btn-ghost" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7" r="5"/><path d="M2 22c0-5 4.5-8 10-8s10 3 10 8z"/></svg>Sign In</a>
+      <a class="btn btn-sm btn-ghost" href="#"><svg width="16" height="12" viewBox="0 0 24 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="1" width="22" height="16" rx="2"/><path d="M6 12l2-6 2 6M6.7 10h2.6M14 6h4M16 6v6M14 12h4"/></svg>Français</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Fold 1: Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#">Home</a><span>/</span><span>Healthcare</span></nav>
+      <div class="hero-grid">
+        <div>
+          <h1>Flexible Parking Solutions for Hospitals and Clinics</h1>
+          <p>WhereiPark connects hospitals and clinics with affordable, flexible parking near your facility — so staff arrive on time, patients get to their appointments, and your team spends less time managing logistics.</p>
+          <a class="btn" href="#get-started">Find me parking</a>
+        </div>
+        <img class="hero-img" src="assets/hero-hospital.jpg" alt="Hospital main entrance with an adjacent parking lot" width="638" height="386">
+      </div>
+    </div>
+  </section>
+
+  <!-- Fold 2: Trusted by -->
+  <section class="trusted center">
+    <div class="wrap">
+      <h2>Trusted by the biggest names for parking solutions</h2>
+      <picture>
+        <source media="(max-width: 767px)" srcset="assets/trusted-logos-mobile.png">
+        <img src="assets/trusted-logos.png" alt="Facebook, Marriott, Zipcar, Hilton, Coca-Cola, Microsoft, Mercedes-Benz, Rogers" width="1216" height="38">
+      </picture>
+    </div>
+  </section>
+
+  <!-- Fold 3a: The problem (NEW, split from old fold 3) -->
+  <section class="problem section is-changed">
+    <span class="note-tag">Feedback 1: old fold 3 split in two. This fold uses Sofia's copy, smaller icons and an image on the right. Photo is a stand-in.</span>
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2>The parking problem hospitals don't talk about</h2>
+          <p class="lede">It's rarely the first thing on an administrator's mind. But it touches almost everything.</p>
+          <ul class="pains">
+            <li><span class="badge"><img src="assets/icon-staff.png" alt="" width="48" height="48"></span>Staff arriving late because they couldn't find a spot</li>
+            <li><span class="badge"><img src="assets/icon-patient.png" alt="" width="48" height="48"></span>Patients missing appointments when lots fill up</li>
+            <li><span class="badge"><img src="assets/icon-visitor.png" alt="" width="48" height="48"></span>Visitors circling blocks before giving up entirely</li>
+          </ul>
+        </div>
+        <img class="photo" src="assets/problem-photo.jpg" alt="Parking lot between office towers" width="580" height="480" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Fold 3b: The fix (NEW) -->
+  <section class="fix section is-changed">
+    <span class="note-tag">Feedback 2 + 3: new fold before Benefits with "THE FIX" pill, image and 3 stat pills. "Check availability in your city" CTA removed. Photo is a stand-in.</span>
+    <div class="wrap">
+      <div class="fix-head">
+        <span class="pill">THE FIX</span>
+        <h2>A dedicated block of parking, managed for you</h2>
+        <p>WhereiPark secures nearby spaces sized to your shifts and patient volumes, then handles sourcing, booking, and coordination end to end.</p>
+      </div>
+      <img class="photo" src="assets/fix-photo.jpg" alt="Staff with lanyards walking in from parking" width="1280" height="440" loading="lazy">
+      <div class="stats">
+        <div class="stat"><img src="assets/icon-cities.png" alt="" width="88" height="88"><div><strong>16 cities</strong><span>across the US and Canada</span></div></div>
+        <div class="stat"><img src="assets/icon-days.png" alt="" width="88" height="88"><div><strong>1-2 days</strong><span>to real options</span></div></div>
+        <div class="stat"><img src="assets/icon-monthly.png" alt="" width="88" height="88"><div><strong>Month-to-month</strong><span>no long-term lease</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fold 4: Benefits -->
+  <section class="benefits section center is-changed">
+    <span class="note-tag">Feedback 4: H2 reworded and body text enlarged from 16px to 18px.</span>
+    <div class="wrap">
+      <span class="pill">BENEFITS</span>
+      <h2>Solve your parking challenges with WhereiPark</h2>
+      <div class="benefit-grid">
+        <article class="benefit"><img src="assets/benefit-time.png" alt="" width="100" height="100"><h3>Staff show up on time. Patients too.</h3><p>A block of parking near your door means shifts start on schedule and appointments get kept. Late arrivals drop across the board.</p></article>
+        <article class="benefit"><img src="assets/benefit-price.png" alt="" width="100" height="100"><h3>Everyone pays less.</h3><p>Group rates beat hospital garages and public lots. Staff spend less each day, you cut overhead, and patients skip the pricey short-term rates.</p></article>
+        <article class="benefit"><img src="assets/benefit-flex.png" alt="" width="100" height="100"><h3>Capacity that flexes with you.</h3><p>Add spaces when you're busy, drop them when you're not. No long-term lease, no paying for empty spots.</p></article>
+        <article class="benefit"><img src="assets/benefit-visit.png" alt="" width="100" height="100"><h3>A better visit, start to finish.</h3><p>Parking is the first and last impression of your facility. Make it easy and satisfaction scores and staff retention follow.</p></article>
+      </div>
+      <div class="cta-row"><a class="btn" href="#get-started">Find me parking</a></div>
+    </div>
+  </section>
+
+  <!-- Fold 5: Steps -->
+  <section class="steps center">
+    <div class="wrap">
+      <h2>Three Steps to Easier Healthcare Parking</h2>
+      <div class="step-grid">
+        <article class="step"><img src="assets/step-1.png" alt="" width="203" height="203" loading="lazy"><h3>Book a Free Discovery Call</h3><p>Speak with a WhereiPark parking specialist who understands healthcare facility needs. We'll map out exactly what you need and where.</p></article>
+        <article class="step"><img src="assets/step-2.png" alt="" width="202" height="203" loading="lazy"><h3>Get Curated Parking Options</h3><p>Within 1–2 business days, we'll present a shortlist of nearby, vetted parking locations tailored to your staff, patient, and visitor volumes.</p></article>
+        <article class="step"><img src="assets/step-3.png" alt="" width="204" height="203" loading="lazy"><h3>Book and Get Your Team Parked</h3><p>Confirm your spaces, share locations with your team, and start parking. Adjust capacity anytime as your needs change.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fold 6: Why -->
+  <section class="why section is-changed">
+    <span class="note-tag">Feedback 5: "Source the spots" and "Manage the details" bullets now use Sofia's wording.</span>
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2>Why healthcare facilities trust WhereiPark</h2>
+          <p class="lede">North America's largest parking-sharing marketplace, connecting hospitals and clinics with flexible parking nearby, including off-market lots you won't find on your own.</p>
+          <ul class="why-list">
+            <li><img src="assets/why-source.png" alt="" width="88" height="88"><div><strong>Source the spots</strong><span>We find 5 to 500+ spots, on-market and off, in metros like Toronto, San Francisco, and LA.</span></div></li>
+            <li><img src="assets/why-negotiate.png" alt="" width="88" height="88"><div><strong>Negotiate the terms</strong><span>We handle pricing, duration, and terms with lot owners, so you get a fair rate.</span></div></li>
+            <li><img src="assets/why-manage.png" alt="" width="88" height="88"><div><strong>Manage the details</strong><span>We assign a dedicated specialist for changes, renewals, and anything that comes up.</span></div></li>
+          </ul>
+        </div>
+        <img class="why-map" src="assets/na-map.png" alt="Map of North America with WhereiPark city pins" width="504" height="458" loading="lazy">
+      </div>
+      <ul class="checks">
+        <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5l3 3 7-7" fill="none" stroke="#12b76a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Parking footprint across 3,000+ cities in North America</li>
+        <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5l3 3 7-7" fill="none" stroke="#12b76a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Short and long term bookings</li>
+        <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5l3 3 7-7" fill="none" stroke="#12b76a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Discounted rates</li>
+        <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7.5l3 3 7-7" fill="none" stroke="#12b76a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated support</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Fold 7: FAQ -->
+  <section class="faq section" id="faq">
+    <div class="wrap">
+      <h2 class="center">FAQS</h2>
+      <div class="faq-list" data-faq>
+        <div class="faq-item open"><button class="faq-q" aria-expanded="true"><span class="faq-icon" aria-hidden="true"></span>How is WhereiPark different from a standard parking garage?</button><div class="faq-a"><div><p>WhereiPark sources parking from a network of private and commercial lots near your facility rather than operating a single garage. This means more location options, more competitive pricing, and the flexibility to scale up or down each month without being locked into a long-term lease.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="faq-icon" aria-hidden="true"></span>How quickly can my hospital or clinic get parking through WhereiPark?</button><div class="faq-a"><div><p>Most healthcare facilities receive a curated list of nearby parking options within 1–2 business days of submitting their requirements. There's no lengthy procurement process — just a quick intake, and a WhereiPark specialist handles the sourcing.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="faq-icon" aria-hidden="true"></span>Do staff and patients need individual accounts to use the parking?</button><div class="faq-a"><div><p>No. Group parking through WhereiPark is managed at the facility level. WhereiPark works with hospital and building administrators for the logistics coordination, and staff or patients simply receive parking location details to use directly. No individual sign-ups or app downloads required.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="faq-icon" aria-hidden="true"></span>Can we add or remove parking spaces as our needs change?</button><div class="faq-a"><div><p>Yes. WhereiPark is fully flexible on a month-to-month basis. Healthcare facilities can increase capacity during high-demand periods — such as flu season or large-scale procedures — and reduce spaces during quieter months</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="faq-icon" aria-hidden="true"></span>What types of parking are available near hospitals and clinics?</button><div class="faq-a"><div><p>WhereiPark offers various parking types across its network, including indoor lots, covered parking, garages, outdoor lots, and street parking. Availability varies by city, but most urban healthcare facilities have multiple options within walking distance.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="faq-icon" aria-hidden="true"></span>What cities does WhereiPark serve for healthcare parking?</button><div class="faq-a"><div><p>WhereiPark currently serves 16 major cities across the US and Canada, including Toronto, Vancouver, New York, Chicago, San Francisco, Seattle, Washington DC, Boston, Los Angeles, Philadelphia, Miami, and more. If your facility is in or near a major metro area, chances are WhereiPark has options nearby.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="faq-icon" aria-hidden="true"></span>Does WhereiPark offer parking for patients with accessibility needs?</button><div class="faq-a"><div><p>Accessibility requirements can be discussed directly with your WhereiPark parking specialist during the intake process. While availability varies by location, the team will do its best to source options that meet ADA or accessibility requirements near your facility.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false"><span class="faq-icon" aria-hidden="true"></span>What information do I need to get started?</button><div class="faq-a"><div><p>Just the basics — your facility's location, an estimate of how many spaces you need, your preferred start date, and whether the parking is primarily for staff, patients, visitors, or a mix. A WhereiPark specialist will take it from there.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fold 8: Final CTA (HubSpot form placeholder) -->
+  <section class="final section center" id="get-started">
+    <div class="wrap">
+      <h2>Tell Us Your Parking Needs. We'll Handle the Rest.</h2>
+      <form class="form-card" data-form novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="off" required></div>
+          <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="off" required></div>
+          <div class="field full"><label for="f-facility">Facility name and address</label><input id="f-facility" name="facility" autocomplete="off" required></div>
+          <div class="field"><label for="f-spaces">Spaces needed</label><input id="f-spaces" name="spaces" type="number" min="1" inputmode="numeric" required></div>
+          <div class="field"><label for="f-start">Preferred start date</label><input id="f-start" name="start" type="date"></div>
+          <div class="field full"><label for="f-for">Parking is mainly for</label>
+            <select id="f-for" name="for"><option>Staff</option><option>Patients</option><option>Visitors</option><option>A mix</option></select></div>
+        </div>
+        <button class="btn" type="submit">Find me parking</button>
+        <p class="form-note">Prototype only. The live page uses the HubSpot form. Nothing here is sent.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="foot-grid">
+    <div>
+      <h4>Company</h4>
+      <ul><li><a href="#">About Us</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#faq">FAQ</a></li><li><a href="#">Privacy &amp; Terms</a></li><li><a href="#">Sitemap</a></li></ul>
+    </div>
+    <div>
+      <h4>Sell Parking</h4>
+      <ul><li><a href="#">Multifamily Apartments</a></li><li><a href="#">Hotels</a></li></ul>
+      <h4 class="sub">Find Group Parking</h4>
+      <ul><li><a href="#">Construction</a></li><li><a href="#">Rental Car Management</a></li><li><a href="#top">Healthcare</a></li></ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul class="contact">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg><a href="#">US: 415 480 7275</a></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg><a href="#">CA: 647 483 9070</a></li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M2 5a2 2 0 012-2h16a2 2 0 012 2v.4l-10 6.3L2 5.4zm0 2.8V19a2 2 0 002 2h16a2 2 0 002-2V7.8l-10 6.3z"/></svg><a href="#">team@whereipark.com</a></li>
+      </ul>
+      <div class="socials" aria-label="Social links">
+        <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M21 2H3a1 1 0 00-1 1v18a1 1 0 001 1h9.6v-7.7H10v-3h2.6V9.1c0-2.6 1.6-4 3.9-4 1.1 0 2 .1 2.3.1v2.7h-1.6c-1.3 0-1.5.6-1.5 1.5v1.9h3l-.4 3h-2.6V22H21a1 1 0 001-1V3a1 1 0 00-1-1z"/></svg></a>
+        <a href="#" aria-label="X"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.4l7.9-9.1L1 2h7l4.8 6.4zm-1.2 18h1.9L7.1 4H5.1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M20.4 2H3.6A1.6 1.6 0 002 3.6v16.8A1.6 1.6 0 003.6 22h16.8a1.6 1.6 0 001.6-1.6V3.6A1.6 1.6 0 0020.4 2zM8 19H5V9.5h3zM6.5 8.2a1.7 1.7 0 110-3.4 1.7 1.7 0 010 3.4zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.7 13 12.7 14.3V19h-3V9.5h2.8v1.3a3.1 3.1 0 012.8-1.5c3 0 3.6 2 3.6 4.6z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Book Parking</h4>
+      <ul class="cities">
+        <li><a href="#">Austin</a></li><li><a href="#">New York</a></li>
+        <li><a href="#">Boston</a></li><li><a href="#">Ottawa</a></li>
+        <li><a href="#">Chicago</a></li><li><a href="#">Philadelphia</a></li>
+        <li><a href="#">Dallas</a></li><li><a href="#">Pittsburgh</a></li>
+        <li><a href="#">Houston</a></li><li><a href="#">Portland</a></li>
+        <li><a href="#">Los Angeles</a></li><li><a href="#">San Diego</a></li>
+        <li><a href="#">Miami</a></li><li><a href="#">San Francisco</a></li>
+        <li><a href="#">Minneapolis</a></li><li><a href="#">Seattle</a></li>
+        <li><a href="#">Montreal</a></li><li><a href="#">Toronto</a></li>
+        <li><a href="#">Nashville</a></li><li><a href="#">Vancouver</a></li>
+        <li><a href="#">Denver</a></li><li><a href="#">Washington DC</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="group"><img src="assets/logo-footer.svg" alt="Spacer Technologies" width="276" height="56"><span>WhereiPark is a part of the Spacer Technologies Group</span></div>
+    <img class="brands" src="assets/footer-brands.png" alt="spacer, spacer.com, parkhound, WhereiPark" width="716" height="77">
+  </div>
+</footer>
+
+<button class="notes-toggle" data-notes-toggle aria-pressed="true"><span class="dot"></span><span data-notes-label>Review notes: on</span></button>
+
+<script>
+(function () {
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  // Announcement bar
+  $('[data-close-announce]').addEventListener('click', function () { $('#announce').remove(); });
+
+  // Mobile menu
+  var nav = $('#nav'), toggle = $('[data-menu-toggle]');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  $$('.nav-links a, .nav-actions a').forEach(function (a) {
+    a.addEventListener('click', function () { nav.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', 'false'); });
+  });
+
+  // Dropdowns
+  $$('[data-dropdown]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var li = btn.parentElement, open = !li.classList.contains('open');
+      $$('.has-menu.open').forEach(function (m) { m.classList.remove('open'); m.firstElementChild.setAttribute('aria-expanded', 'false'); });
+      li.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+  });
+  document.addEventListener('click', function () {
+    $$('.has-menu.open').forEach(function (m) { m.classList.remove('open'); m.firstElementChild.setAttribute('aria-expanded', 'false'); });
+  });
+
+  // FAQ accordion (one open at a time)
+  $$('[data-faq] .faq-q').forEach(function (q) {
+    q.addEventListener('click', function () {
+      var item = q.parentElement, open = !item.classList.contains('open');
+      $$('[data-faq] .faq-item').forEach(function (i) { i.classList.remove('open'); i.firstElementChild.setAttribute('aria-expanded', 'false'); });
+      item.classList.toggle('open', open);
+      q.setAttribute('aria-expanded', open);
+    });
+  });
+
+  // Mock form: validates, never submits anywhere
+  var form = $('[data-form]');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var bad = null;
+    $$('input[required]', form).forEach(function (input) {
+      var ok = input.checkValidity() && input.value.trim() !== '';
+      input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      if (!ok && !bad) bad = input;
+    });
+    if (bad) { bad.focus(); return; }
+    form.innerHTML = '<div class="form-done" role="status"><strong>Thanks, we’re on it.</strong>A WhereiPark specialist would reach out within 1 business day. (Prototype: nothing was sent.)</div>';
+  });
+
+  // Review notes toggle (per-viewer preference)
+  var key = 'hc-v2-notes', body = document.body, label = $('[data-notes-label]'), nt = $('[data-notes-toggle]');
+  function setNotes(on) {
+    body.classList.toggle('notes', on);
+    label.textContent = 'Review notes: ' + (on ? 'on' : 'off');
+    nt.setAttribute('aria-pressed', on);
+  }
+  try { var saved = localStorage.getItem(key); if (saved !== null) setNotes(saved === '1'); } catch (err) {}
+  nt.addEventListener('click', function () {
+    var on = !body.classList.contains('notes');
+    setNotes(on);
+    try { localStorage.setItem(key, on ? '1' : '0'); } catch (err) {}
+  });
+})();
+</script>
+</body>
+</html>
